@@ -1,43 +1,38 @@
-# python-package
+1.[Построение двоичного дерева](https://ru.hexlet.io/challenges/python_oop_basics_binary_tree_build_exercise)
 
-[![Github Actions Status](https://github.com/hexlet-boilerplates/python-package/workflows/Python%20CI/badge.svg)](https://github.com/hexlet-boilerplates/python-package/actions)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_python-package&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_python-package)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_python-package&metric=coverage)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_python-package)
+**Двоичное дерево** — иерархическая структура данных, в которой каждый узел имеет не более двух потомков (детей):
 
-### Links
+- первый называется родительским узлом,
+- дети называются левым и правым наследниками.
 
-This project was built using these tools:
+В данном испытании мы будем использовать подвид двоичного дерева — **двоичное дерево поиска**. Правильное дерево:
 
-| Tool                                                                   | Description                                             |
-|------------------------------------------------------------------------|---------------------------------------------------------|
-| [uv](https://docs.astral.sh/uv/)                                       | "An extremely fast Python package and project manager, written in Rust" |
-| [Pytest](https://pytest.org)                                           | "A mature full-featured Python testing tool"            |
-| [ruff](https://docs.astral.sh/ruff/)                                   | "An extremely fast Python linter and code formatter, written in Rust" |
+- не содержит повторяющихся ключей,
+- для каждого узла гарантируется, что в левом поддереве все значения меньше текущего
+- для каждого узла гарантируется, что в правом поддереве все значения больще текущего
 
----
+### Задача
 
-### Setup
+Реализуйте класс, который представляет собой узел дерева.
 
-```bash
-make install
+Класс должен содержать:
+
+- Атрибут `key` — ключ узла.
+- Атрибуты `left` и `right` — ссылки на левого и правого ребёнка соответственно. 
+- Если ребёнок в узле отсутствует, `геттер` возвращает `None`.
+- Метод `insert(key)` — выполняет добавление узла, формируя правильное двоичное дерево.
+
+```python
+from solution import Node
+tree = Node()
+tree.insert(9)
+tree.insert(17)
+tree.insert(4)
+tree.insert(3)
+tree.insert(6)
+tree.key  # 9
+tree.left.key  # 4
+tree.right.key  # 17
+tree.left.left.key  # 3
+tree.left.right.key  # 6
 ```
-
-### Examples
-
-```bash
-uv run hexlet-python-package 5
-
-2.5
-```
-
-### Run tests
-
-```bash
-make test
-```
-
-[![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://hexlet.io/?utm_source=github&utm_medium=link&utm_campaign=python-package)
-
-This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet](https://hexlet.io/?utm_source=github&utm_medium=link&utm_campaign=python-package).
-
-See most active contributors on [hexlet-friends](https://friends.hexlet.io/).
