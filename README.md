@@ -1,7 +1,32 @@
+#
 
+## Задачи по разделу "Алгоритмы. Деревья" - папка py_files
 
+### ts01.py
 
-1.[Построение двоичного дерева](https://ru.hexlet.io/challenges/python_oop_basics_binary_tree_build_exercise)
+Реализуйте и экспортируйте по умолчанию функцию, которая принимает содержание книги в виде списка словарей и возвращает строку – маркированный список-оглавление. Структуру списка с содержанием книги можно посмотреть в файле __fixtures__/table_of_contents.json
+
+```python
+import solution from solution
+
+solution(book)
+# Chapter 1: Sorting Spells
+# * 1.1 Bubble Sort
+# * 1.2 Insertion Sort
+# * 1.3 Merge Sort
+# * 1.4 Quick Sort
+# Chapter 2: Graphical Charms
+# * 2.1 Graph Traversal
+# * * 2.1.1 Breadth-First Search
+# * * 2.1.2 Depth-First Search
+# ...
+```
+
+## Задачи по разделу " введение в ООП" - папка py_files
+
+### ch01.py
+
+### [Построение двоичного дерева](https://ru.hexlet.io/challenges/python_oop_basics_binary_tree_build_exercise)
 
 **Двоичное дерево** — иерархическая структура данных, в которой каждый узел имеет не более двух потомков (детей):
 
@@ -21,7 +46,7 @@
 Класс должен содержать:
 
 - Атрибут `key` — ключ узла.
-- Атрибуты `left` и `right` — ссылки на левого и правого ребёнка соответственно. 
+- Атрибуты `left` и `right` — ссылки на левого и правого ребёнка соответственно.
 - Если ребёнок в узле отсутствует, `геттер` возвращает `None`.
 - Метод `insert(key)` — выполняет добавление узла, формируя правильное двоичное дерево.
 
