@@ -1,28 +1,17 @@
-class Person:
-    def __init__(self, name, surname):
-        self.name = name
-        self.surname = surname
+class BinaryTreeNode:
+    def __init__(self, value, parent=None):
+        self.left = None  # ссылка на левый дочерний узел
+        self.right = None  # ссылка на правый дочерний узел
+        self.parent = parent  # ссылка на родителя
+        self.value = value  # полезная нагрузка
         
-    @property  
-    def full_name(self):
-        return self.name + ' ' + self.surname
-    
-    @full_name.setter
-    def full_name(self, new):
-        self.name, self.surname = new.split(' ')
-        
-    @full_name.deleter
-    def full_name(self):
-        print('Удаление имени и фамилии')
-        self.name = None
-        self.surname = None
-
-tom = Person('Sergey', 'Jkovlew')
-print(tom.name)
-print(tom.full_name)
-
-tom.full_name = 'larik Jkovleskii'
-print(tom.name)
-print(tom.surname)
-del tom.full_name
-print(tom.name, tom.surname)
+    def find_node(self, value): # поиск узла
+        node = self
+        while node:
+            if value == node.value:
+                return node
+            if value < node.value:
+                node = node.left
+            else:
+                node = node.right
+        return None
