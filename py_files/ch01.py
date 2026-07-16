@@ -11,9 +11,12 @@ class Node:
             return
         if key == self.key:
             return
-        if key < self.key:
-            if not self.left:
-                self.left = self.__class__()
+        if key < self.key: # если новый ключ меньше текущего узла, он должен быть в левом поддереве
+            
+            # это проверка «а есть ли уже левый ребёнок».
+            # not self.left истинно, когда self.left равно None (то есть слева пусто).
+            if not self.left: # если левого ребенка нет — создаём новый узел.
+                self.left = self.__class__() # создается пустой узел
             target = self.left
         else:
             if not self.right:
