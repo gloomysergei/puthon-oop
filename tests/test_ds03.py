@@ -1,4 +1,4 @@
-from design.ds02 import PasswordValidator
+from design.ds03 import PasswordValidator
 
 
 def test_validate_with_default_options():
