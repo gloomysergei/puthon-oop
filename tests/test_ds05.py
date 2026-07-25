@@ -1,4 +1,4 @@
-from solution import Url
+from design.ds05 import Url
 
 
 URL1 = 'http://hexlet.io?key=value&key2=value2'

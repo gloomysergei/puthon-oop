@@ -1,12 +1,4 @@
-class PasswordValidator:
-    OPTIONS = {
-        'min_len': 8,
-        'contain_numbers': False,
-    }
+from urllib.parse import urlparse
 
-    def __init__(self, **options):
-        self.options = PasswordValidator.OPTIONS | options
-
-options = {'contain_numbers': True}
-validator = PasswordValidator(**options)
-print(validator.options)
+url = urlparse('http://www.cwi.nl:80/%7Eguido/Python.html')
+print(url.geturl())
