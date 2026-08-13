@@ -1,4 +1,10 @@
-from urllib.parse import urlparse
+data = [{'turkey': ['istambul', 'antalia']}, {'russia': ['samara', 'moscow']}]
 
-url = urlparse('http://www.cwi.nl:80/%7Eguido/Python.html')
-print(url.geturl())
+merged = {}
+for d in data:
+    merged.update(d)
+#print(merged)
+
+sorted_country = sorted(merged.items())
+result = {country: sorted(city) for country, city in sorted_country}
+print(result)

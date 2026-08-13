@@ -11,6 +11,8 @@ class Collection:
     def filter_(self, func):
         return Collection(list(filter(func, self.iterable)))
 
+    # Collection ждет итерируемый объект, поэтому одиночное значение
+    # reduce_ оборачиваем в скобки - список из одного элемента
     def reduce_(self, func, acc=None):
         return Collection([_reduce(func, self.iterable, acc)])
 
