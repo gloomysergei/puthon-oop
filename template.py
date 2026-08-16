@@ -1,10 +1,24 @@
-data = [{'turkey': ['istambul', 'antalia']}, {'russia': ['samara', 'moscow']}]
+class DataValidator:
+    def __init__(self, data):
+        self.data = data
+        self.errors = []
+        
+    def validate_email(self):
+        if '@' not in self.data.get('email', ''):
+            self.errors.append('Invalid email')
+        return self
+        
+    def validate_password(self):
+        if len(self.data.get('password', '')) < 8:
+            self.errors.append('Password is too short')
+        return self
+    
+    def get_errors(self):
+        return self.errors
+    
+data = {'email': 'serkolew@mail.ru', 'password': 'short'}
+validator = DataValidator(data)
+errors = validator.validate_email().validate_password().get_errors()
 
-merged = {}
-for d in data:
-    merged.update(d)
-#print(merged)
-
-sorted_country = sorted(merged.items())
-result = {country: sorted(city) for country, city in sorted_country}
-print(result)
+if errors:
+    print(errors)
